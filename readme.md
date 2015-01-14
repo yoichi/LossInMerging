@@ -13,6 +13,12 @@ At first, clone sample repository as follows.
 ```
 % git clone https://github.com/yoichi/LossInMerging.git
 % cd LossInMerging
+% git checkout -b production --track origin/production
+Branch production set up to track remote branch production from origin.
+Switched to a new branch 'production'
+% git checkout -b development --track origin/development
+Branch development set up to track remote branch development from origin.
+Switched to a new branch 'development'
 ```
 
 The 'development' branch has 3 commits. The 'production' branch
