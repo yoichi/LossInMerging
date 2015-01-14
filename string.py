@@ -9,5 +9,5 @@ class String:
 if __name__ == '__main__':
     a = String("Example String")
     assert a.get() == "ExampleString"
-    assert a.equals("Example String") == True
+    assert a.equals("ExampleString") == True
     assert a.equals("Different String") == False
