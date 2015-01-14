@@ -3,3 +3,5 @@ class String:
         self.__data = data
     def get(self):
         return self.__data
+    def equals(self, other):
+        return self.__data == other
