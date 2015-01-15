@@ -1,8 +1,13 @@
 # Prevent code loss in merging
 
-There are some situations where SCM assisted merging
-to the production branch may cause code loss, and developers
-should take care of them.
+There are some situations where SCM assisted merging from the
+development branch to the production branch may cause code loss.
+It is caused by bad handling of the conflict in the merge, or
+bad handling of past conflicts in the target branch.
+There are several articles on resolve conflict by just modifing
+the change itself which we are going to merge. In this article,
+we will consider what we can do to reduce a possibility of a code loss,
+in addition to modifing the change itself.
 
 ## Typical example
 
@@ -121,12 +126,16 @@ we cannot adopt this plan.
 
 We might have test codes to detect regression caused by code changes
 _as illustrated in another development branch 'withtest' in the example
-repository_. The test code may conflict at (1'), _as illustrated in branch 'production_withtest'_,
-then we have a chance to know the possibility of the code loss.
-Here, we should note that we might overlook the possibility of the code loss at the conflict.
-We might resolve the conflict without recovering the test for composite case along
-with the lost production code. Don't miss the cause of the
-second conflict.
+repository_. In general, the test code of the feature A cannot find
+defects of another feature B. Even if feature A and B are independent
+from the perspective of external specification, their implementations
+may have some dependent parts. So the test code may conflict at the second
+merge (1') in the branch too, _as illustrated in branch 'production_withtest'_.
+Then we have a chance to know the possibility of the code loss.
+Here, we should note that we might overlook the possibility of the code loss
+at the conflict. We might resolve the conflict without recovering the test for
+composite case along with the lost production code. We should carefully
+investigate the cause of the second conflict before resolving.
 
 ## record the unfinished works for future merge
 
