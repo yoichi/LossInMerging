@@ -127,8 +127,8 @@ we cannot adopt this plan.
 We might have test codes to detect regression caused by code changes
 _as illustrated in another development branch 'withtest' in the example
 repository_. In general, the test code of the feature A cannot find
-defects of another feature B. Even if feature A and B are independent
-from the perspective of external specification, their implementations
+defects of another feature B. Even if feature A and B have no explicit
+dependency from the perspective of external specification, their implementations
 may have some dependent parts. So the test code may conflict at the second
 merge (1') in the branch too, _as illustrated in branch 'production_withtest'_.
 Then we have a chance to know the possibility of the code loss.
